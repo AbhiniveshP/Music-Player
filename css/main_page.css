@@ -1,3 +1,72 @@
+/* setting the entire page's body color */
+
 body {
-	background-color: #111e67;
+	background-color: #1c6284;
+}
+
+/* the below chunk of code makes sure that the header div (the top row) is displayed in a flex manner wrapped in 
+positive row direction with spaces in between each inner division */
+
+.main-heading {
+	display: flex;
+	height: auto;
+	width: auto;
+	flex-wrap: wrap;
+	/*justify-content: space-between;*/
+	align-items: center;
+	box-sizing: border-box;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+/* the below chunk is for making the main logo blonk at regular intervals of time */
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	25% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	75% {
+		opacity: 0.5;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+/* places an image in the main logo div, also after many hit and trials, the background size property
+seemed interesting */
+
+.main-logo-image {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 100%;
+	animation: blink 2s infinite normal ease-in-out;
+	background-color: #12e452;
+	background-image: url('../images/music-solid.svg');
+	background-size: 1rem;
+}
+
+.main-heading-title {
+	margin-left: 0.5rem;
+}
+
+/* the main title div just beside main logo, is a hyperlink to return to the same home page, removed the underline and
+also displayed block with monospace font */
+
+.main-heading-title a{
+	text-decoration: none;
+	display: block;
+	width: 10rem;
+	font-family: monospace;
+    color: white;
 }
