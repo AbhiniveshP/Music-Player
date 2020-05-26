@@ -7,19 +7,28 @@ body {
 /* the below chunk of code makes sure that the header div (the top row) is displayed in a flex manner wrapped in 
 positive row direction with spaces in between each inner division */
 
-.main-heading {
+.website-header {
 	display: flex;
 	height: auto;
 	width: auto;
 	flex-wrap: wrap;
-	/*justify-content: space-between;*/
+	justify-content: space-between;
 	align-items: center;
 	box-sizing: border-box;
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
 
-/* the below chunk is for making the main logo blonk at regular intervals of time */
+.website-header > div {
+	display: inline-block;
+}
+
+.main-heading > div {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* the below chunk is for making the main logo blink at regular intervals of time */
 
 @keyframes blink {
 	0% {
@@ -53,7 +62,7 @@ seemed interesting */
 	animation: blink 2s infinite normal ease-in-out;
 	background-color: #12e452;
 	background-image: url('../images/music-solid.svg');
-	background-size: 1rem;
+	background-size: 1.5rem;
 }
 
 .main-heading-title {
@@ -69,4 +78,115 @@ also displayed block with monospace font */
 	width: 10rem;
 	font-family: monospace;
     color: white;
+}
+
+/* key frame to blink black and white through grey for facorites section */
+@keyframes black-white {
+	0% {
+		color: black;
+		transform: scale(0.8);
+	}
+
+	25% {
+		color: grey;
+		transform: scale(1);
+	}
+
+	50% {
+		color: white;
+		transform: scale(1.2);
+	}
+
+	75% {
+		color: grey;
+		transform: scale(1);
+	}
+
+	100% {
+		color: black;
+		transform: scale(0.8);
+	}
+}
+
+
+/* favorites class blinks at an interval of 4s */
+.favorites {
+	font-family: monospace;
+	animation: black-white 4s infinite normal ease-in-out;
+}
+
+/* class for complete search engine */
+.search-engine{
+	width: 20%;
+	position: relative;
+}
+
+/* class for only input in search engine */
+.search-engine input {
+	width: 100%;
+	border-radius: 2rem;
+	text-align: center;
+	border: none;
+	padding-right: 1rem;
+	font-size: 1.2rem;
+	font-family: monospace;
+}
+
+/* this removes blue outline when started typing... */
+input:focus {
+	outline: none;
+}
+
+/* colors for both inner icons: magnifying lens and mic */
+.inner-icon {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+/* below both magnifying lens and mic are placed in absolute way so that they come on top of search engine */
+.search-icon {
+	display: inline-block;
+	position: absolute;
+	left: 5%;
+	top: 10%;
+}
+
+.search-mic {
+	display: inline-block;
+	position: absolute;
+	right: 0%;
+	top: 10%;
+}
+
+/* notification bell green and yellow if hovered upon */
+.notification-bell {
+	color: limegreen;
+	position: relative;
+}
+
+.notification-bell:hover {
+	color: yellow;
+}
+
+.notification-bell i{
+	font-size: 1.5rem;
+}
+
+/* the notifications count on top-right of bell icon */
+.notification-bell .notification-dot {
+	border-radius: 20%;
+	background: red;
+	position: absolute;
+	color: white;
+	padding: 0.1rem 0.05rem;
+	top: -0.5rem;
+	right: -0.1rem;
+}
+
+/* profile or user pic css below*/
+.profile-pic {
+	color: darkblue;
+}
+
+.profile-pic i {
+	font-size: 2rem;
 }
